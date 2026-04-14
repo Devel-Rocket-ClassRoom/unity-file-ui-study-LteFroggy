@@ -1,0 +1,46 @@
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+
+[ExecuteAlways]
+public class LocalizationItemSmall : MonoBehaviour
+{
+    private ItemNameText _itemNameText;
+    private Button _button;
+    private ItemSpriteImage _itemSpriteImage;
+    private ItemData _itemData;
+    
+    private LocalizationItemBig _bigItem;
+    [Header("=== 표시할 아이템의 ID ===")]
+    [SerializeField] private string _itemId;
+
+    private void Awake() {
+        _itemNameText = GetComponentInChildren<ItemNameText>();
+        _itemSpriteImage = GetComponentInChildren<ItemSpriteImage>();
+        _button = GetComponent<Button>();
+        _bigItem = GameObject.FindWithTag(Tags.ItemInfoBig).GetComponent<LocalizationItemBig>();
+        
+        _button.onClick.AddListener(() => _bigItem.UpdateItemData(_itemData));
+    }
+    
+    private void UpdateItemData() {
+        _itemData = DataTableManager.ItemTable.Get(_itemId);
+        if (_itemData == null) { return; }
+        
+        if (_itemNameText == null)  { return; }
+        _itemNameText.SetItemNameText(_itemData.StringName);
+        
+        if (_itemSpriteImage == null) { return; }
+        _itemSpriteImage.SetSpriteImage(_itemData.SpriteIcon);
+        
+    }
+    
+    // 시작할 때 id에 해당하는 정보 불러오고, 적용
+    private void Start() {
+        UpdateItemData();
+    }
+
+    private void OnValidate() {
+        UpdateItemData();
+    }
+}
