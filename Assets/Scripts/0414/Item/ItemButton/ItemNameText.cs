@@ -1,15 +1,14 @@
 ﻿using TMPro;
 using UnityEngine;
 
-[ExecuteAlways]
-public class ItemDescText : MonoBehaviour {
+public class ItemNameText : MonoBehaviour {
 	private TextMeshProUGUI _nameText;
 
 	private void Awake() {
 		_nameText = GetComponent<TextMeshProUGUI>();
 	}
 	
-	public void SetItemDescText(string desc) {
-		_nameText.text = desc;
+	public void SetItemNameText(string nameText) {
+		_nameText.text = nameText;
 	}
 }

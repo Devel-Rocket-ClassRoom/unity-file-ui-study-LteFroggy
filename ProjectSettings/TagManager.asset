@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - ItemInfoBig
+  - CharacterPanel
+  - ItemPanel
+  - CharacterInfoDetail
+  - ItemInfoDetail
   layers:
   - Default
   - TransparentFX

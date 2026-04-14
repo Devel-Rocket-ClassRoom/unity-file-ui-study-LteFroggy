@@ -2,15 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteAlways]
-public class LocalizationItemSmall : MonoBehaviour
+public class ItemInfoSimple : MonoBehaviour
 {
     private ItemNameText _itemNameText;
     private Button _button;
     private ItemSpriteImage _itemSpriteImage;
     private ItemData _itemData;
     
-    private LocalizationItemBig _bigItem;
+    private ItemInfoDetail _infoDetailItem;
     [Header("=== 표시할 아이템의 ID ===")]
     [SerializeField] private string _itemId;
 
@@ -18,13 +17,14 @@ public class LocalizationItemSmall : MonoBehaviour
         _itemNameText = GetComponentInChildren<ItemNameText>();
         _itemSpriteImage = GetComponentInChildren<ItemSpriteImage>();
         _button = GetComponent<Button>();
-        _bigItem = GameObject.FindWithTag(Tags.ItemInfoBig).GetComponent<LocalizationItemBig>();
+        _infoDetailItem = GameObject.FindWithTag(Tags.ItemInfoDetail).GetComponent<ItemInfoDetail>();
         
-        _button.onClick.AddListener(() => _bigItem.UpdateItemData(_itemData));
+        _button.onClick.AddListener(() => _infoDetailItem.UpdateItemData(_itemData));
     }
     
     private void UpdateItemData() {
         _itemData = DataTableManager.ItemTable.Get(_itemId);
+        
         if (_itemData == null) { return; }
         
         if (_itemNameText == null)  { return; }

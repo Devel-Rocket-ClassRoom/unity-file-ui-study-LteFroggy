@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteAlways]
 public class ItemSpriteImage : MonoBehaviour {
 	private Image _image;
 

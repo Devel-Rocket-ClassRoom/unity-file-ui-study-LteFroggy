@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-[ExecuteAlways]
-public class LocalizationItemBig : MonoBehaviour {
+public class ItemInfoDetail : MonoBehaviour {
 	private ItemNameText _name;
 	private ItemDescText _desc;
     private ItemSpriteImage _itemSpriteImage;
@@ -12,12 +11,22 @@ public class LocalizationItemBig : MonoBehaviour {
         _desc = GetComponentInChildren<ItemDescText>();
         _itemSpriteImage = GetComponentInChildren<ItemSpriteImage>();
     }
-
-    // 처음 시작 시에는 데이터 없게
-    private void Start() {
-	    _name.SetItemNameText(string.Empty);
-	    _desc.SetItemDescText(string.Empty);
-	    _itemSpriteImage.SetSpriteImage(null);
+    
+    public void Initialize() {
+	    if (_name == null) {
+		    Debug.LogError("Name 컴포넌트가 지정되지 않았습니다");
+		    return;
+	    } if (_desc == null) {
+		    Debug.LogError("Description 컴포넌트가 지정되지 않았습니다");
+		    return;
+	    } if (_itemSpriteImage == null) {
+		    Debug.LogError("ItemSpriteImage 컴포넌트가 지정되지 않았습니다");
+		    return;
+	    }
+	    
+	    _name.SetItemNameText(string.Empty);		    
+		_desc.SetItemDescText(string.Empty);
+		_itemSpriteImage.SetSpriteImage(null);
     }
 
     // 자기 자신의 정보 갱신

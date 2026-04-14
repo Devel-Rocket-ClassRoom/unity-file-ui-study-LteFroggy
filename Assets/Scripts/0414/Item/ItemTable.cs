@@ -7,7 +7,11 @@ public class ItemTable : DataTable {
 	public override void Load(string fileName) {
 		_table.Clear();
 		
+		
 		string path = string.Format(FormatPath, fileName);
+		
+		Debug.Log($"ItemTable 초기화 시 파일 경로 : {path}");
+		
 		TextAsset textAsset = Resources.Load<TextAsset>(path);
 		List<ItemData> itemList = LoadCSV<ItemData>(textAsset.text);
 		

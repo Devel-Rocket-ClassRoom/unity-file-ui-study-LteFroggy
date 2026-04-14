@@ -10,3 +10,10 @@ Item1Desc,This is a sword.
 Item2Desc,This is a shield.
 Item3Desc,This is a bow.
 Item4Desc,This is a potion.
+Warrior,Warrior
+Archer,Archer
+Magician,Magician
+Defender,Defender
+Attack,Attack
+MagicAttack,MagicAttack
+Defence,Defence

@@ -8,6 +8,8 @@ public static class DataTableManager
     public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
     
     public static ItemTable ItemTable => Get<ItemTable>(DataTableIds.Item);
+    
+    public static CharacterTable CharacterTable => Get<CharacterTable>(DataTableIds.Character);
 
 #if UNITY_EDITOR
     public static StringTable GetStringTable(Languages lang)
@@ -15,30 +17,28 @@ public static class DataTableManager
         return Get<StringTable>(DataTableIds.StringTableIds[(int)lang]);
     }
 #endif
-
-
+    
     static DataTableManager()
     {
         Init();
     }
 
-    private static void Init()
-    {
-#if !UNITY_EDITOR
-        var stringTable = new StringTable();
-        stringTable.Load(DatableIds.String);
-        _tables.Add(DatableIds.String, stringTable);
-#else
-        foreach (var id in DataTableIds.StringTableIds)
-        {
+    private static void Init() {
+        foreach (var id in DataTableIds.StringTableIds) {
             var stringTable = new StringTable();
             stringTable.Load(id);
             _tables.Add(id, stringTable);
         }
-#endif
+        
+        // 아이템 테이블 추가
         var itemTable = new ItemTable();
         itemTable.Load(DataTableIds.Item);
         _tables.Add(DataTableIds.Item, itemTable);
+        
+        // 캐릭터 테이블 추가
+        CharacterTable characterTable = new CharacterTable();
+        characterTable.Load(DataTableIds.Character);
+        _tables.Add(DataTableIds.Character, characterTable);
     }
 
     public static void ChangeLanguage(Languages lang)
