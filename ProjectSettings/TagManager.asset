@@ -9,6 +9,7 @@ TagManager:
   - CharacterInfoDetail
   - ItemInfoDetail
   - SaveTarget
+  - ObjectCreator
   layers:
   - Default
   - TransparentFX
