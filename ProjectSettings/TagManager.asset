@@ -8,6 +8,7 @@ TagManager:
   - ItemPanel
   - CharacterInfoDetail
   - ItemInfoDetail
+  - SaveTarget
   layers:
   - Default
   - TransparentFX
