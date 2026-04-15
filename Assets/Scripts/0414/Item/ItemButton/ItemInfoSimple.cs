@@ -19,7 +19,8 @@ public class ItemInfoSimple : MonoBehaviour
         _button = GetComponent<Button>();
         _infoDetailItem = GameObject.FindWithTag(Tags.ItemInfoDetail).GetComponent<ItemInfoDetail>();
         
-        _button.onClick.AddListener(() => _infoDetailItem.UpdateItemData(_itemData));
+        _button.onClick.AddListener(() => _infoDetailItem.ChangeItemData(_itemData));
+        Variables.OnLanguageChanged += UpdateItemData;
     }
     
     private void UpdateItemData() {
@@ -32,7 +33,6 @@ public class ItemInfoSimple : MonoBehaviour
         
         if (_itemSpriteImage == null) { return; }
         _itemSpriteImage.SetSpriteImage(_itemData.SpriteIcon);
-        
     }
     
     // 시작할 때 id에 해당하는 정보 불러오고, 적용

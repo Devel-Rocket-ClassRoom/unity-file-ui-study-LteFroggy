@@ -1763,7 +1763,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 488787831}
-  - component: {fileID: 488787830}
   - component: {fileID: 488787832}
   m_Layer: 0
   m_Name: CSVTest
@@ -1772,19 +1771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &488787830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488787829}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1764fc21e50cb49875b927cf7c8597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CSVTest1
-  _textAsset: {fileID: 4900000, guid: 37f802d41e320674e9e9424ebd9159ed, type: 3}
 --- !u!4 &488787831
 Transform:
   m_ObjectHideFlags: 0
@@ -2416,7 +2402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &713422465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3440,7 +3426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &957255985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4456,10 +4442,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1574597903}
   - {fileID: 1201230940}
   - {fileID: 453203402}
   - {fileID: 1657402913}
+  - {fileID: 1574597903}
   - {fileID: 280697011}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4999,7 +4985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1468222174
 RectTransform:
   m_ObjectHideFlags: 0

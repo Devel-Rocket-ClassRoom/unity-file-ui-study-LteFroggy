@@ -10,6 +10,8 @@ public class ItemInfoDetail : MonoBehaviour {
         _name = GetComponentInChildren<ItemNameText>();
         _desc = GetComponentInChildren<ItemDescText>();
         _itemSpriteImage = GetComponentInChildren<ItemSpriteImage>();
+        
+        Variables.OnLanguageChanged += UpdateItemData;
     }
     
     public void Initialize() {
@@ -30,13 +32,13 @@ public class ItemInfoDetail : MonoBehaviour {
     }
 
     // 자기 자신의 정보 갱신
-	public void UpdateItemData(ItemData data) {
+	public void ChangeItemData(ItemData data) {
 		_itemData = data;
-		RenewData();
+		UpdateItemData();
 	}
 	
 	// 실제 데이터 갱신
-	private void RenewData() {
+	private void UpdateItemData() {
 		_name.SetItemNameText(_itemData.StringName);
 		_desc.SetItemDescText(_itemData.StringDesc);
 		_itemSpriteImage.SetSpriteImage(_itemData.SpriteIcon);

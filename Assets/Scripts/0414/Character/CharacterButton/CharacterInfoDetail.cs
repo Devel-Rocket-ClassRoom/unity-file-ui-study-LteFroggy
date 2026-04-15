@@ -14,6 +14,8 @@ public class CharacterInfoDetail : MonoBehaviour {
 		_nameText = GetComponentInChildren<CharacterNameText>();
 		_abilityText = GetComponentInChildren<CharacterAbilityText>();
 		_jobText = GetComponentInChildren<CharacterJobText>();
+		
+		Variables.OnLanguageChanged += UpdateCharacterInfo;
 	}
 
 	// 시작 시엔 모두 초기화
@@ -37,12 +39,12 @@ public class CharacterInfoDetail : MonoBehaviour {
 		_jobText.SetJobText(string.Empty);
 	}
 
-	public void UpdateDetailInfo(CharacterData data) {
+	public void ChangeCharacterInfo(CharacterData data) {
 		_data = data;
-		RenewData();
+		UpdateCharacterInfo();
 	}
 	
-	public void RenewData() {
+	public void UpdateCharacterInfo() {
 		_jobText.SetJobText(_data.JobString);
 		_spriteImage.SetSpriteImage(_data.SpriteIcon);
 		_nameText.SetNameText(_data.Name);

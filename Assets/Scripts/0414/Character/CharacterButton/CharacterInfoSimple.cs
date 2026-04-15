@@ -19,7 +19,8 @@ public class CharacterInfoSimple : MonoBehaviour {
 		_characterData = DataTableManager.CharacterTable.Get(_characterId);
 		_detailInfo = GameObject.FindWithTag(Tags.CharacterInfoDetail).GetComponent<CharacterInfoDetail>();
 		
-		_button.onClick.AddListener(() => _detailInfo.UpdateDetailInfo(_characterData));
+		_button.onClick.AddListener(() => _detailInfo.ChangeCharacterInfo(_characterData));
+		Variables.OnLanguageChanged += UpdateUI;
 	}
 
 	private void Start() {
