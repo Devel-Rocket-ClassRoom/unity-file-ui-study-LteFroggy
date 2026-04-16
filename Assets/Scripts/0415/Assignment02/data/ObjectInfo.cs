@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[System.Serializable]
 public class ObjectInfo {
 	public ObjectShape shape;
 	public Vector3 pos;

@@ -61,7 +61,7 @@ public class ObjectCreateDestroyer : MonoBehaviour {
 		instance.transform.parent = transform;
 		instance.GetComponent<ObjectMeta>().Initialize(objInfo);
 	}
-	
+
 	// 모든 도형 삭제
 	public void DestoryAllObject() {
 		GameObject[] objects = GameObject.FindGameObjectsWithTag(Tags.SaveTarget);

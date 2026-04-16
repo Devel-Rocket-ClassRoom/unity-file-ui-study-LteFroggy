@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemTable : DataTable {
 	private readonly Dictionary<string, ItemData> _table = new Dictionary<string, ItemData>();
+	
+	public ItemData RandomData => _table.ElementAt(Random.Range(0, _table.Count)).Value;
 	
 	public override void Load(string fileName) {
 		_table.Clear();
