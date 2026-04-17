@@ -1,23 +1,29 @@
-using System;
 using UnityEngine;
 
 public class WindowManager : MonoBehaviour {
-	[SerializeField] private GenericWindow[] _windows;
 	private int _currentWindowId;
-	private int _defaultWindowId = 0;
+	private readonly int _defaultWindowId = 0;
+	
+	[Header("=== WindowManager의 Window 리스트 ===")]
+	[SerializeField] private GenericWindow[] _windows;
 
 	private void Awake() {
+		_windows = new GenericWindow[transform.childCount];
+		for (int i = 0; i < transform.childCount; i++) {
+			_windows[i] = transform.GetChild(i).GetComponent<GenericWindow>();
+		}
+		
 		_currentWindowId = _defaultWindowId;
-		Open(_currentWindowId);
+		Open((WindowList)_currentWindowId);
 		
 		foreach (var window in _windows) {
 			window.Init(this);
 		}
 	}
 
-	public GenericWindow Open(int id) {
+	public GenericWindow Open(WindowList id) {
 		CloseAllWindows();
-		_currentWindowId = id;
+		_currentWindowId = (int)id;
 		_windows[_currentWindowId].Open();
 		
 		return _windows[_currentWindowId];

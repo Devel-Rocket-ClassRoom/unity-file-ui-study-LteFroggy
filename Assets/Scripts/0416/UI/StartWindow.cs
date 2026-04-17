@@ -12,9 +12,9 @@ public class StartWindow : GenericWindow {
 		_continueButton.gameObject.SetActive(_canContinue);
 		
 		if (!_canContinue) {
-			firstSelected = _newGameButton.gameObject;
+			_firstSelected = _newGameButton.gameObject;
 		} else {
-			firstSelected = _continueButton.gameObject;
+			_firstSelected = _continueButton.gameObject;
 		}
 		
 		base.Open();
@@ -31,14 +31,14 @@ public class StartWindow : GenericWindow {
     }
 	
 	private void OnContinue() {
-		Debug.Log($"OnContinue()");
+		_windowManager.Open(WindowList.GameOverWindow);
 	}
 	
 	private void OnNewGame() {
-		Debug.Log($"OnNewGame()");
+		_windowManager.Open(WindowList.KeyboardWindow);
 	}
 	
 	private void OnOption() {
-		Debug.Log($"OnOption()");
+		_windowManager.Open(WindowList.DifficultyWindow);
 	}
 }
