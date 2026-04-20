@@ -55,12 +55,17 @@ public class KeyboardWindow : GenericWindow {
 		// 처음 열리면 값은 언더바로
 		DeleteAllTexts();
 		
+		// 키보드 클릭 Listener 추가
 		foreach (var button in _keyboardButtons) {
+			button.onClick.RemoveAllListeners();
 			button.onClick.AddListener(() => OnKeyboardClicked(button));
 		}
 		
+		_cancelButton.onClick.RemoveAllListeners();
 		_cancelButton.onClick.AddListener(OnCancel);
+		_deleteButton.onClick.RemoveAllListeners();
 		_deleteButton.onClick.AddListener(OnDelete);
+		_acceptButton.onClick.RemoveAllListeners();
 		_acceptButton.onClick.AddListener(OnAccept);
 		
 		// 처음 열리면, 커서 깜빡임 시작
@@ -137,21 +142,20 @@ public class KeyboardWindow : GenericWindow {
 		_coDeleteAll = StartCoroutine(CoDeleteAll());
 	}
 	
+	private void DeleteAllTextsDirectly() {
+		RealText = string.Empty;
+	}
+	
 	public override void Close() {
-		base.Close();
-		
-		DeleteAllTexts();
+		DeleteAllTextsDirectly();
 		
 		// 닫힐 때 커서 깜빡임 제거
 		if (_coCursorBlinking != null) { StopCoroutine(_coCursorBlinking); }
+		_coCursorBlinking = null;
+		if (_coDeleteAll != null) { StopCoroutine(_coDeleteAll); }
+		_coDeleteAll = null;
 		
-		// 이벤트 제거
-		foreach (var button in _keyboardButtons) {
-			button.onClick.RemoveListener(() => OnKeyboardClicked(button));
-		}
-		_cancelButton.onClick.RemoveListener(OnCancel);
-		_deleteButton.onClick.RemoveListener(OnDelete);
-		_acceptButton.onClick.RemoveListener(OnAccept);
+		base.Close();
 	}
 	
 	public void OnKeyboardClicked(Button button) {

@@ -18,14 +18,24 @@ public class DifficultyWindow : GenericWindow {
 		
 		base.Open();
 		
+		_diffToggles[0].onValueChanged.RemoveAllListeners();
 		_diffToggles[0].onValueChanged.AddListener(OnEasyChanged);
+		_diffToggles[1].onValueChanged.RemoveAllListeners();
 		_diffToggles[1].onValueChanged.AddListener(OnNormalChanged);
+		_diffToggles[2].onValueChanged.RemoveAllListeners();
 		_diffToggles[2].onValueChanged.AddListener(OnHardChanged);
 		
+		_cancelButton.onClick.RemoveAllListeners();
 		_cancelButton.onClick.AddListener(OnCancel);
+		_applyButton.onClick.RemoveAllListeners();
 		_applyButton.onClick.AddListener(OnApply);
 	}
-	
+
+	public override void Close() {
+		
+		base.Close();
+	}
+
 	private void OnEasyChanged(bool value) {
 		if (value) { _diffValue = 0; }
 	}

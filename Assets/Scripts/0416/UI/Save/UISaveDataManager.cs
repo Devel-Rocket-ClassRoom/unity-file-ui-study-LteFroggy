@@ -5,9 +5,9 @@ using UnityEngine;
 
 public static class UISaveDataManager {
 	
-	private static string _saveFolderPath = Path.Combine(Application.persistentDataPath, "saves");
-	private static string _saveFileName = "diff.json";
-	private static string _savePath = Path.Combine(_saveFolderPath, _saveFileName); 
+	private static readonly string _saveFolderPath = Path.Combine(Application.persistentDataPath, "saves");
+	private static readonly string _saveFileName = "diff.json";
+	private static readonly string _savePath = Path.Combine(_saveFolderPath, _saveFileName); 
 	
 	public static void Save(int diffNum) {
 		// 폴더 없으면 만들기

@@ -25,10 +25,6 @@ public class GameOverWindow : GenericWindow {
 	[SerializeField] private TextMeshProUGUI _scoreText;
 	[SerializeField] private TextMeshProUGUI _scoreValue;
 
-	private void Awake() {
-		_nextButton.onClick.AddListener(OnNext);
-	}
-
 
 	public override void Open() {
 		_firstSelected = _nextButton.gameObject;
@@ -49,6 +45,10 @@ public class GameOverWindow : GenericWindow {
 		if (_runningCoroutine != null) {  StopCoroutine(_runningCoroutine); }
 		_lerpElapsed = 0;
 		_runningCoroutine = StartCoroutine(CoOpenStats());
+		
+		// 버튼 할당
+		_nextButton.onClick.RemoveAllListeners();
+		_nextButton.onClick.AddListener(OnNext);
 	}
 
 	private IEnumerator CoOpenStats() {
@@ -82,10 +82,12 @@ public class GameOverWindow : GenericWindow {
 	}
 	
 	public override void Close() {
-		base.Close();
-		
 		if (_runningCoroutine != null) { StopCoroutine(_runningCoroutine); }
 		_runningCoroutine = null;
+		
+		_nextButton.onClick.RemoveListener(OnNext);
+		
+		base.Close();
 	}
 	
 	private void OnNext() {

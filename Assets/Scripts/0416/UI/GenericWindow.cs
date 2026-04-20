@@ -17,6 +17,7 @@ public class GenericWindow : MonoBehaviour {
 	}
 	
 	public virtual void Close() {
+		Debug.Log($"{GetType().Name} 클래스 Close 완료");
 		gameObject.SetActive(false);
 	}
 }

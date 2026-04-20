@@ -21,9 +21,11 @@ public class WindowManager : MonoBehaviour {
 		}
 	}
 
-	public GenericWindow Open(WindowList id) {
-		CloseAllWindows();
+	public GenericWindow Open(WindowList id) { 
+		_windows[_currentWindowId].Close();
+		
 		_currentWindowId = (int)id;
+		
 		_windows[_currentWindowId].Open();
 		
 		return _windows[_currentWindowId];
@@ -31,7 +33,7 @@ public class WindowManager : MonoBehaviour {
 	
 	private void CloseAllWindows() {
 		foreach (var window in _windows) {
-			window.gameObject.SetActive(false);
+			window.Close();
 		}
 	}
 }
