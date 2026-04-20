@@ -15,7 +15,7 @@ public class ItemAddButton : MonoBehaviour {
 		ItemData data = DataTableManager.ItemTable.RandomData;
 		
 		// 데이터 넣기
-		SaveDataManager.Data.ItemList.Add(data.Id);
+		SaveDataManager.Data.ItemList.Add(new SaveItemData(data));
 		
 		Debug.Log($"{DataTableManager.StringTable.Get(data.Name)}이(가) 인벤토리에 추가됨");
 	}

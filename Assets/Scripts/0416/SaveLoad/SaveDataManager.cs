@@ -4,11 +4,11 @@ using Newtonsoft.Json;
 using UnityEngine;
 
 // 특정 버전을 manager내에서 명시하지 않기 위해서 using 사용 -> 버전 수정 시 using만 수정
-using SaveDataVC = SaveDataV3;
+using SaveDataVC = SaveDataV4;
 
 public static class SaveDataManager {
 	// 해당 Client에서 사용하고 있는 SaveData의 Version
-	public static int SaveDataVersion { get; } = 3;
+	public static int SaveDataVersion { get; } = 4;
 	public static SaveDataVC Data { get; set; } = new SaveDataVC();
 	
 	public static SaveMode Mode { get; set; } = SaveMode.Text;
@@ -27,10 +27,13 @@ public static class SaveDataManager {
 		_ => throw new ArgumentOutOfRangeException()
 	};
 	
-	private static JsonSerializerSettings settings = new JsonSerializerSettings() {
+	private static readonly JsonSerializerSettings settings = new JsonSerializerSettings() {
 		Formatting = Formatting.Indented,
 		TypeNameHandling = TypeNameHandling.All,
-		// 개발 중 Converter가 추가된다면, 여기에 추가하기
+		Converters = {
+			// 개발 중 Converter가 추가된다면, 여기에 추가하기
+			new ItemDataConverter(),
+		}
 	};
 	
 	private static string GetSaveFilePath(int slotNum) {
@@ -71,7 +74,10 @@ public static class SaveDataManager {
 	
 	public static bool Load(int slotNum) {
 		// 유효하지 않은 슬롯 번호면 false
-		if (slotNum < 0 || slotNum >= saveFileNames.Length) { return false; }
+		if (slotNum < 0 || slotNum >= saveFileNames.Length) {
+			Debug.LogError($"유효하지 않은 슬롯 번호입니다.");
+			return false;
+		}
 		
 		string savePath = GetSaveFilePath(slotNum);
 		if (!File.Exists(savePath)) {
@@ -96,8 +102,8 @@ public static class SaveDataManager {
 			
 			Debug.Log($"{saveFileNames[slotNum]}슬롯에서 로드 완료");
 			return true;
-		} catch {
-			
+		} catch (Exception e){
+			Debug.LogError($"{e}");
 		}
 		return false;
 	}

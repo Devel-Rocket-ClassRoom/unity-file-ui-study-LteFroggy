@@ -16,5 +16,6 @@ public class ItemData {
 	
 	public string StringName => DataTableManager.StringTable.Get(Name);
 	public string StringDesc => DataTableManager.StringTable.Get(Desc);
+	public string StringType => DataTableManager.StringTable.Get(Type.ToString());
 	public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
 }

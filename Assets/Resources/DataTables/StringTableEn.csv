@@ -17,3 +17,11 @@ Defender,Defender
 Attack,Attack
 MagicAttack,MagicAttack
 Defence,Defence
+Name,Name
+Desc,Description
+Type,Type
+Value,Value
+Cost,Cost
+Weapon,Weapon
+Equip,Equip
+Consumable,Consumable

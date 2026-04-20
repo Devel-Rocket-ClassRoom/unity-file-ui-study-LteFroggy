@@ -17,3 +17,11 @@ Defender,방패병
 Attack,공격력
 MagicAttack,마법공격력
 Defence,방어력
+Name,이름
+Desc,설명
+Type,타입
+Value,밸류
+Cost,가격
+Weapon,무기
+Equip,장비
+Consumable,소모품

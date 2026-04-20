@@ -1,12 +1,27 @@
 ﻿Id,String
-HELLO,やあ
-BYE,じゃあな
-YOU DIE,あなたは死ぬ
+HELLO,こんにちは
+BYE,さようなら
+YOU DIE,あなたは死んだ
 Item1Name,剣
 Item2Name,盾
 Item3Name,弓
 Item4Name,ポーション
-Item1Desc,これは剣だ。
-Item2Desc,これは盾だ。
-Item3Desc,これは弓だ。
-Item4Desc,これはポーションだ。
+Item1Desc,これは剣です。
+Item2Desc,これは盾です。
+Item3Desc,これは弓です。
+Item4Desc,これはポーションです。
+Warrior,戦士
+Archer,弓使い
+Magician,魔法使い
+Defender,盾兵
+Attack,攻撃力
+MagicAttack,魔法攻撃力
+Defence,防御力
+Name,名前
+Desc,説明
+Type,タイプ
+Value,値
+Cost,価格
+Weapon,武器
+Equip,装備
+Consumable,消耗品

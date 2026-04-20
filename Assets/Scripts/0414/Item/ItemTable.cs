@@ -7,9 +7,10 @@ public class ItemTable : DataTable {
 	
 	public ItemData RandomData => _table.ElementAt(Random.Range(0, _table.Count)).Value;
 	
+	private List<string> _keyList;
+	
 	public override void Load(string fileName) {
 		_table.Clear();
-		
 		
 		string path = string.Format(FormatPath, fileName);
 		
@@ -25,6 +26,8 @@ public class ItemTable : DataTable {
 				Debug.LogError($"아이템 아이디 중복됨 : {item.Id}");
 			}
 		}
+		
+		_keyList = _table.Keys.ToList();
 	}
 	
 	public ItemData Get(string id) {
@@ -34,5 +37,9 @@ public class ItemTable : DataTable {
 			Debug.LogError($"테이블에 존재하지 않는 아이템 조회 : {id}");
 			return null;
 		}
+	}
+	
+	public ItemData GetRandomItem() {
+		return _table[_keyList[Random.Range(0, _keyList.Count)]];
 	}
 }

@@ -7,13 +7,22 @@ public class SaveDataV3 : SaveDataV2 {
 	public List<string> ItemList = new List<string>();
 	
 	public override SaveData VersionUp() {
-		throw new NotImplementedException();
+		SaveDataV4 v4 = new SaveDataV4();
+		
+		v4.Name = Name;
+		v4.Gold = Gold;
+		
+		foreach (var item in ItemList) {
+			v4.ItemList.Add(new SaveItemData(DataTableManager.ItemTable.Get(item)));
+		}
+		
+		return v4;
 	}
 	
 	// SaveDataManager에서 만들 때
 	public SaveDataV3() { }
 	
-	// SaveDataV2에서 VersionUp 할 때
+	// V2 -> V3 마이그레이션 용도
 	public SaveDataV3 (SaveDataV2 saveData) : base(saveData) { }
 
 	public override string ToString() {
