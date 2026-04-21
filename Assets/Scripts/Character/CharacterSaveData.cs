@@ -16,11 +16,44 @@ public class CharacterSaveData {
 	private SaveItemData _weapon;
 	private SaveItemData _armor;
 	private int _exp;
+
+	public int CalculatedAttack {
+		get {
+			if (Weapon == null) { return CharacterData.Attack; }
+			// 검 장착시 공격력 10 
+			if (Weapon.ItemData.Id == "Item1") { return CharacterData.Attack + 10; }
+			// 활 장착시 공격력 5
+			if (Weapon.ItemData.Id == "Item3") { return CharacterData.Attack + 5; }
+			
+			return CharacterData.Attack;
+		}
+	}
 	
+	public int CalculatedDefense {
+		get {
+			if (Armor == null) { return CharacterData.Defence; }
+			// 방패 장착시 방어력 10
+			if (Armor.ItemData.Id == "Item2") { return CharacterData.Defence + 10; }
+			
+			return CharacterData.Defence;
+		}
+	}
+	
+	public int CalculatedMagicAttack {
+		get {
+			if (Weapon == null) { return CharacterData.MagicAttack; }
+			// 책 장착 시 마법공격력 10
+			if (Weapon.ItemData.Id == "Item5") { return CharacterData.MagicAttack + 10; }
+			
+			return CharacterData.MagicAttack;
+		}
+	}
+
 	public SaveItemData Weapon {
 		get => _weapon;
 		set {
-			if (value.ItemData.Type != ItemTypes.Weapon) {
+			if (value == null) { } 
+			else if (value.ItemData.Type != ItemTypes.Weapon) {
 				Debug.Log($"무기만 장착할 수 있습니다.");
 				return;
 			}
@@ -32,7 +65,8 @@ public class CharacterSaveData {
 	public SaveItemData Armor {
 		get => _armor;
 		set {
-			if (value.ItemData.Type != ItemTypes.Equip) {
+			if (value == null) { }
+			else if (value.ItemData.Type != ItemTypes.Equip) {
 				Debug.Log($"방어구만 장착할 수 있습니다.");
 				return;
 			}
@@ -40,6 +74,4 @@ public class CharacterSaveData {
 			_weapon = value;
 		}
 	}
-	
-	
 }

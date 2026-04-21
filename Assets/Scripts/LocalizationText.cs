@@ -7,18 +7,19 @@ public class LocalizationText : MonoBehaviour
 #if UNITY_EDITOR
     public Languages editorLang;
 #endif
+    [SerializeField] private string _id;
     public string id {
-        get => id; 
+        get => _id; 
         set {
-           id = value;
+           _id = value;
            if (value != string.Empty) {
-               OnChangedId();   
+               OnChangedId();
            }
         }
     }
     public TextMeshProUGUI text;
 
-    private void Start()
+    private void Awake()
     {
         if (text == null) text = GetComponent<TextMeshProUGUI>();
     }
@@ -33,7 +34,7 @@ public class LocalizationText : MonoBehaviour
 #if UNITY_EDITOR
         else
         {
-            OnChangeLanguage(editorLang);
+            // OnChangeLanguage(editorLang);
         }
 #endif
     }
@@ -49,7 +50,7 @@ public class LocalizationText : MonoBehaviour
     private void OnValidate()
     {
 #if UNITY_EDITOR
-        OnChangeLanguage(editorLang);
+        // OnChangeLanguage(editorLang);
 #endif
     }
 
@@ -62,7 +63,7 @@ public class LocalizationText : MonoBehaviour
 #if UNITY_EDITOR
     private void OnChangeLanguage(Languages lang)
     {
-        if (text == null) return;
+        if (text == null || id == string.Empty) return;
         var stringTable = DataTableManager.GetStringTable(lang);
         text.text = stringTable.Get(id);
     }
