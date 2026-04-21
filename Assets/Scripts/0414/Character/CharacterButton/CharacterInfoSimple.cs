@@ -29,7 +29,6 @@ public class CharacterInfoSimple : MonoBehaviour {
 
 	private void UpdateUI() {
 		_spriteImage.SetSpriteImage(_characterData.SpriteIcon);
-		_nameText.SetNameText(_characterData.Name);
 	}
 	
 }

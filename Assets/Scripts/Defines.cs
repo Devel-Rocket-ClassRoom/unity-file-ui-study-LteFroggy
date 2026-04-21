@@ -32,6 +32,21 @@ public enum InventorySortingOption {
     CostDescending,
 }
 
+public enum CharacterFilteringOption {
+    None,
+    Warrior,
+    Archer,
+    Magician,
+    Defender,
+}
+
+public enum CharacterSortingOption {
+    CreatedAscending,
+    CreatedDescending,
+    JobAscending,
+    JobDescending,
+}
+
 public static class Variables
 {
     public static event UnityAction OnLanguageChanged;

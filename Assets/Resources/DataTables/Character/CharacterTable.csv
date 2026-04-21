@@ -1,5 +1,5 @@
-﻿Id,Name,Job,Attack,MagicAttack,Defence,Icon
-Character1,김철수,Warrior,40,0,10,Icon_Sword06
-Character2,이보영,Archer,20,20,10,Icon_Bow02
-Character3,박덕식,Magician,0,40,10,Icon_Fire02
-Character4,최고다,Defender,5,5,40,Icon_Shield01
+﻿Id,Job,Attack,MagicAttack,Defence,Icon
+Character1,Warrior,40,0,10,Icon_Sword06
+Character2,Archer,20,20,10,Icon_Bow02
+Character3,Magician,0,40,10,Icon_Fire02
+Character4,Defender,5,5,40,Icon_Shield01

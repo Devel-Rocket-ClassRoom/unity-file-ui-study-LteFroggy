@@ -45,9 +45,8 @@ public class CharacterInfoDetail : MonoBehaviour {
 	}
 	
 	public void UpdateCharacterInfo() {
-		_jobText.SetJobText(_data.JobString);
+		_jobText.SetJobText(_data.StringJob);
 		_spriteImage.SetSpriteImage(_data.SpriteIcon);
-		_nameText.SetNameText(_data.Name);
 		_abilityText.SetAbilityText(_data.AbilityText);
 	}
 }

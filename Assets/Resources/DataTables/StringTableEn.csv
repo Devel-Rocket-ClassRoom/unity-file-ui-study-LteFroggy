@@ -39,3 +39,7 @@ Save,Save
 Load,Load
 AddItem,Add Item
 RemoveItem,Remove Item
+AddCharacter,Add Character
+RemoveCharacter,Remove Character
+JobAscending,Job ↓
+JobDescending,Job ↑

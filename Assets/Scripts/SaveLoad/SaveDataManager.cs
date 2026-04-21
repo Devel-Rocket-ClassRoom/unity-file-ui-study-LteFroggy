@@ -2,6 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 // 특정 버전을 manager내에서 명시하지 않기 위해서 using 사용 -> 버전 수정 시 using만 수정
 using SaveDataVC = SaveDataV5;
@@ -33,6 +34,7 @@ public static class SaveDataManager {
 		Converters = {
 			// 개발 중 Converter가 추가된다면, 여기에 추가하기
 			new ItemDataConverter(),
+			new CharacterDataConverter(),
 		}
 	};
 	

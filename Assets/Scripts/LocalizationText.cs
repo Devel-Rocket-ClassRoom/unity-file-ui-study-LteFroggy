@@ -7,7 +7,15 @@ public class LocalizationText : MonoBehaviour
 #if UNITY_EDITOR
     public Languages editorLang;
 #endif
-    public string id;
+    public string id {
+        get => id; 
+        set {
+           id = value;
+           if (value != string.Empty) {
+               OnChangedId();   
+           }
+        }
+    }
     public TextMeshProUGUI text;
 
     private void Start()

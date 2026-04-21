@@ -39,3 +39,7 @@ Save,저장
 Load,불러오기
 AddItem,아이템 추가
 RemoveItem,아이템 제거
+AddCharacter,캐릭터 추가
+RemoveCharacter,캐릭터 삭제
+JobAscending,직업순 ↓
+JobDescending,직업순 ↑ 
