@@ -66,9 +66,9 @@ public class UiInventorySlotList : MonoBehaviour {
 	public void Init() {
 		TempItemList = SaveDataManager.Data.ItemList;
 		
-		// 불러온 FilteringOption, SortingOption 적용
-		FilterOption = SaveDataManager.Data.filteringOption;
-		SortingOption = SaveDataManager.Data.sortingOption;
+		// FilteringOption, SortingOption 적용
+		FilterOption = SaveDataManager.Data.InventoryFilteringOption;
+		SortingOption = SaveDataManager.Data.InventorySortingOption;
 		
 		UpdateSlots();
 	}

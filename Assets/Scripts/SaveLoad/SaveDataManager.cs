@@ -2,17 +2,20 @@
 using System.IO;
 using Newtonsoft.Json;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 // 특정 버전을 manager내에서 명시하지 않기 위해서 using 사용 -> 버전 수정 시 using만 수정
-using SaveDataVC = SaveDataV5;
+using SaveDataVC = SaveVersions.SaveDataV6;
 
 public static class SaveDataManager {
 	// 해당 Client에서 사용하고 있는 SaveData의 Version
-	public static int SaveDataVersion { get; } = 5;
+	public static int SaveDataVersion { get; } = 6;
 	public static SaveDataVC Data { get; set; } = new SaveDataVC();
 	
 	public static SaveMode Mode { get; set; } = SaveMode.Text;
+	
+	static SaveDataManager() {
+		Load();
+	}
 	
 	private static readonly string saveFolderPath = Path.Combine(Application.persistentDataPath, "saves");
 	private static readonly string[] saveFileNames = {

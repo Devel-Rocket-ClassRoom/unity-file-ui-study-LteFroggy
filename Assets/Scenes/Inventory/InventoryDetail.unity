@@ -898,7 +898,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1628097996}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99988544
+  m_Size: 0.99996686
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -974,7 +974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000034942954}
+  m_AnchoredPosition: {x: 0, y: 0.019698761}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &596113693
@@ -1885,7 +1885,6 @@ GameObject:
   - component: {fileID: 776252529}
   - component: {fileID: 776252532}
   - component: {fileID: 776252531}
-  - component: {fileID: 776252530}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1912,21 +1911,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &776252530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 776252528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1ff3a001427344db1543960b85a377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
-  editorLang: 0
-  id: AddItem
-  text: {fileID: 776252531}
 --- !u!114 &776252531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,7 +1931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uC774\uD15C \uCD94\uAC00"
+  m_text: "\uD0A4 \uC5C6\uC74C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
   m_sharedMaterial: {fileID: -8376962124726486561, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
@@ -2701,7 +2685,6 @@ GameObject:
   - component: {fileID: 916405969}
   - component: {fileID: 916405972}
   - component: {fileID: 916405971}
-  - component: {fileID: 916405970}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2728,21 +2711,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &916405970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916405968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1ff3a001427344db1543960b85a377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
-  editorLang: 0
-  id: Load
-  text: {fileID: 916405971}
 --- !u!114 &916405971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2763,7 +2731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBD88\uB7EC\uC624\uAE30"
+  m_text: "\uD0A4 \uC5C6\uC74C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
   m_sharedMaterial: {fileID: -8376962124726486561, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
@@ -3409,7 +3377,6 @@ GameObject:
   - component: {fileID: 1232468058}
   - component: {fileID: 1232468061}
   - component: {fileID: 1232468060}
-  - component: {fileID: 1232468059}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3436,21 +3403,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1232468059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232468057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1ff3a001427344db1543960b85a377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
-  editorLang: 0
-  id: Save
-  text: {fileID: 1232468060}
 --- !u!114 &1232468060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,7 +3423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC800\uC7A5"
+  m_text: "\uD0A4 \uC5C6\uC74C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
   m_sharedMaterial: {fileID: -8376962124726486561, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
@@ -4501,15 +4453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationDropDown
   editorLang: 0
-  ids:
-  - CreatedAscending
-  - CreatedDescending
-  - NameAscending
-  - NameDescending
-  - TypeAscending
-  - TypeDescending
-  - CostAscending
-  - CostDescending
+  _ids: []
   dropdown: {fileID: 1478243419}
 --- !u!114 &1478243419
 MonoBehaviour:
@@ -4558,34 +4502,10 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1307155454}
   m_ItemImage: {fileID: 0}
-  m_Value: 6
+  m_Value: 0
   m_MultiSelect: 0
   m_Options:
-    m_Options:
-    - m_Text: "\uCD5C\uC2E0\uC21C \u2193"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uCD5C\uC2E0\uC21C \u2191"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uC774\uB984\uC21C \u2193"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uC774\uB984\uC21C \u2191"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uD0C0\uC785\uBCC4 \u2193"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uD0C0\uC785\uBCC4 \u2191"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uAC00\uACA9 \u2193"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uAC00\uACA9 \u2191"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5156,7 +5076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC00\uACA9 \u2193"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
   m_sharedMaterial: {fileID: -8376962124726486561, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
@@ -5291,12 +5211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationDropDown
   editorLang: 0
-  ids:
-  - None
-  - Weapon
-  - Equip
-  - Consumable
-  - NotConsumable
+  _ids: []
   dropdown: {fileID: 1788041680}
 --- !u!114 &1788041680
 MonoBehaviour:
@@ -5345,25 +5260,10 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 686244402}
   m_ItemImage: {fileID: 0}
-  m_Value: 3
+  m_Value: 0
   m_MultiSelect: 0
   m_Options:
-    m_Options:
-    - m_Text: "\uC5C6\uC74C"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uBB34\uAE30"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uC7A5\uBE44"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uC18C\uBAA8\uD488"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: "\uC18C\uBAA8\uD488 \uC81C\uC678"
-      m_Image: {fileID: 0}
-      m_Color: {r: 1, g: 1, b: 1, a: 1}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5615,7 +5515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
   editorLang: 0
-  id: RemoveItem
+  _id: 
   text: {fileID: 1862480696}
 --- !u!114 &1862480696
 MonoBehaviour:
@@ -5637,7 +5537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uC774\uD15C \uC81C\uAC70"
+  m_text: "\uD0A4 \uC5C6\uC74C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
   m_sharedMaterial: {fileID: -8376962124726486561, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
@@ -6015,7 +5915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC18C\uBAA8\uD488"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}
   m_sharedMaterial: {fileID: -8376962124726486561, guid: 2bc93ca84079eb942b6b5bb65e26abdf, type: 2}

@@ -10,30 +10,32 @@ public class UiCharacterSlot : MonoBehaviour {
 	
 	private Button _slotButton;
 	private Sprite _emptySprite;
-	private CharacterSaveData CharacterSaveData { get; set; }
+	public CharacterSaveData CharacterSaveData { get; set; }
 	
 	public int SlotNum { get; set; }
 	
 	public UnityEvent onSlotPressed;
 	
-	private void Awake() {
+	public void Init() {
 		_emptySprite = Resources.Load<Sprite>($"Icons/grey_crossWhite");
 		_slotButton = GetComponent<Button>();
-		_characterJob.gameObject.AddComponent<LocalizationText>();
-		_characterJobText = _characterJob.GetComponent<LocalizationText>();
+		_characterJobText = _characterJob.gameObject.AddComponent<LocalizationText>();
 		_characterJobText.id = string.Empty;
+		_characterJobText.enabled = false;
 		
 		onSlotPressed = _slotButton.onClick;
 	}
 
 	public void SetEmpty() {
 		_characterImage.sprite = _emptySprite;
+		_characterJobText.enabled = false;
 		_characterJob.text = string.Empty;
 	}
 	
 	public void SetCharacterData(CharacterSaveData data) {
 		CharacterSaveData = data;
 		_characterJobText.id = data.CharacterData.Job;
+		_characterJobText.enabled = true;
 		_characterImage.sprite = data.CharacterData.SpriteIcon;
 	}
 }

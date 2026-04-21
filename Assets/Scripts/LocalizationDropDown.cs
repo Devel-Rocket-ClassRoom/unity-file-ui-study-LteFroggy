@@ -10,8 +10,17 @@ public class LocalizationDropDown : MonoBehaviour
     // 플레이 모드가 아닐 때 인스펙터에서 미리보기용 언어
     public Languages editorLang;
 #endif
+    [SerializeField] private string[] _ids;
     // 드롭다운 옵션 텍스트를 가져올 StringTable 키 목록
-    public string[] ids;
+    public string[] ids {
+        get => _ids;
+        set {
+            _ids = value;
+            if (_ids != null) {
+                OnChangeLanguage();
+            }
+        }
+    }
     // 로컬라이징 대상 TMP 드롭다운
     public TMP_Dropdown dropdown;
 
