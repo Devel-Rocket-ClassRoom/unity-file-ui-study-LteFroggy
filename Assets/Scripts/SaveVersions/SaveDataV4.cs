@@ -6,7 +6,14 @@ public class SaveDataV4 : SaveDataV3 {
 	public new List<SaveItemData> ItemList = new List<SaveItemData>();
 	
 	public override SaveData VersionUp() {
-		throw new System.InvalidOperationException();
+		SaveDataV5 v5 = new SaveDataV5();
+		v5.Name = Name;
+		v5.Gold = Gold;
+		v5.ItemList = ItemList;
+		v5.filteringOption = InventoryFilteringOption.None;
+		v5.sortingOption = InventorySortingOption.CreatedAscending;
+		
+		return v5;
 	}
 
 	public override string ToString() {

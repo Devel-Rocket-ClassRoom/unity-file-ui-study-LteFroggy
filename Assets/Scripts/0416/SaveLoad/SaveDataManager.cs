@@ -4,11 +4,11 @@ using Newtonsoft.Json;
 using UnityEngine;
 
 // 특정 버전을 manager내에서 명시하지 않기 위해서 using 사용 -> 버전 수정 시 using만 수정
-using SaveDataVC = SaveDataV4;
+using SaveDataVC = SaveDataV5;
 
 public static class SaveDataManager {
 	// 해당 Client에서 사용하고 있는 SaveData의 Version
-	public static int SaveDataVersion { get; } = 4;
+	public static int SaveDataVersion { get; } = 5;
 	public static SaveDataVC Data { get; set; } = new SaveDataVC();
 	
 	public static SaveMode Mode { get; set; } = SaveMode.Text;
@@ -40,7 +40,7 @@ public static class SaveDataManager {
 		return Path.Combine(saveFolderPath, saveFileNames[slotNum] + Extension);
 	}
 	
-	public static bool Save(int slotNum) {
+	public static bool Save(int slotNum = 0) {
 		// 데이터가 없거나, 유효하지 않은 슬롯 번호면 false
 		if (Data == null || slotNum < 0 || slotNum >= saveFileNames.Length) { return false; }
 		// 폴더 없다면 만들기
@@ -72,7 +72,7 @@ public static class SaveDataManager {
 		return false;
 	}
 	
-	public static bool Load(int slotNum) {
+	public static bool Load(int slotNum = 0) {
 		// 유효하지 않은 슬롯 번호면 false
 		if (slotNum < 0 || slotNum >= saveFileNames.Length) {
 			Debug.LogError($"유효하지 않은 슬롯 번호입니다.");
@@ -81,8 +81,7 @@ public static class SaveDataManager {
 		
 		string savePath = GetSaveFilePath(slotNum);
 		if (!File.Exists(savePath)) {
-			Debug.LogError("저장 파일이 없습니다.");
-			return false;
+			return Save(slotNum);
 		}
 		
 		// 로드할 경로 탐색

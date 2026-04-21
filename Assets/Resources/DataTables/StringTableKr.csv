@@ -25,3 +25,17 @@ Cost,가격
 Weapon,무기
 Equip,장비
 Consumable,소모품
+NotConsumable,소모품 제외
+None,없음
+CreatedAscending,최신순 ↓
+CreatedDescending,최신순 ↑
+NameAscending,이름순 ↓
+NameDescending,이름순 ↑
+TypeAscending,타입별 ↓
+TypeDescending,타입별 ↑
+CostAscending,가격 ↓
+CostDescending,가격 ↑
+Save,저장
+Load,불러오기
+AddItem,아이템 추가
+RemoveItem,아이템 제거

@@ -11,7 +11,12 @@ public class SaveItemData {
 		CreatedTime = DateTime.Now;
 		ItemData = data;
 	}
+	public SaveItemData() {}
 	
 	// ItemId만 들어오면 알아서 찾아다가 넣기
 	public SaveItemData(string itemId) : this(DataTableManager.ItemTable.Get(itemId)) {}
+
+	public override string ToString() {
+		return $"InstanceId: {InstanceId}, CreatedTime: {CreatedTime}, ItemId : {ItemData.Id}";
+	}
 }

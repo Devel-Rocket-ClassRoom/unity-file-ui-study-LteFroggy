@@ -25,3 +25,17 @@ Cost,Cost
 Weapon,Weapon
 Equip,Equip
 Consumable,Consumable
+NotConsumable,Except Consumable
+None,None
+CreatedAscending,Created ↓
+CreatedDescending,Created ↑
+NameAscending,Name ↓
+NameDescending,Name ↑
+TypeAscending,Type ↓
+TypeDescending,Type ↑
+CostAscending,Cost ↓
+CostDescending,Cost ↑
+Save,Save
+Load,Load
+AddItem,Add Item
+RemoveItem,Remove Item

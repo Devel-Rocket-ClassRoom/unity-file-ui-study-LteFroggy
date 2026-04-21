@@ -47,12 +47,14 @@ public class LocalizationText : MonoBehaviour
 
     private void OnChangedId()
     {
+        if (text == null) return;
         text.text = DataTableManager.StringTable.Get(id);
     }
 
 #if UNITY_EDITOR
     private void OnChangeLanguage(Languages lang)
     {
+        if (text == null) return;
         var stringTable = DataTableManager.GetStringTable(lang);
         text.text = stringTable.Get(id);
     }

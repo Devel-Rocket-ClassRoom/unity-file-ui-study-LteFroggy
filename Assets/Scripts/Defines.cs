@@ -13,6 +13,25 @@ public enum ItemTypes {
 		Consumable
 }
 
+public enum InventoryFilteringOption {
+    None,
+    Weapon,
+    Equip,
+    Consumable,
+    NotConsumable,
+}
+
+public enum InventorySortingOption {
+    CreatedAscending,
+    CreatedDescending,
+    NameAscending,
+    NameDescending,
+    TypeAscending,
+    TypeDescending,
+    CostAscending,
+    CostDescending,
+}
+
 public static class Variables
 {
     public static event UnityAction OnLanguageChanged;

@@ -25,3 +25,17 @@ Cost,価格
 Weapon,武器
 Equip,装備
 Consumable,消耗品
+NotConsumable,消耗品以外
+None,None
+CreatedAscending,作成日 ↓
+CreatedDescending,作成日 ↑
+NameAscending,名前 ↓
+NameDescending,名前 ↑
+TypeAscending,種類 ↓
+TypeDescending,種類 ↑
+CostAscending,価格 ↓
+CostDescending,価格 ↑
+Save,セーブ
+Load,ロード
+AddItem,アイテム追加
+RemoveItem,アイテム削除
