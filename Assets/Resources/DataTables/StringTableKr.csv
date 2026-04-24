@@ -45,3 +45,5 @@ AddCharacter,캐릭터 추가
 RemoveCharacter,캐릭터 삭제
 JobAscending,직업순 ↓
 JobDescending,직업순 ↑ 
+Equip,장착하기
+Unequip,장착 해제

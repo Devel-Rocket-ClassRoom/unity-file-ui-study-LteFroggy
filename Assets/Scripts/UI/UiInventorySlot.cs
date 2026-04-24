@@ -18,7 +18,7 @@ public class UiInventorySlot : MonoBehaviour {
 		_button = GetComponent<Button>();
 	}
 
-	public void SetEmpty() {
+	public virtual void SetEmpty() {
 		_itemIcon.sprite = EmptyImage;
 		_itemName.text = string.Empty;
 		SaveItemData = null;
@@ -28,7 +28,7 @@ public class UiInventorySlot : MonoBehaviour {
 		_button.onClick.AddListener(act);
 	}
 	
-	public void SetItem(SaveItemData data) {
+	public virtual void SetItem(SaveItemData data) {
 		SaveItemData = data;
 		_itemIcon.sprite = data.ItemData.SpriteIcon;
 		_itemName.text = data.ItemData.StringName;

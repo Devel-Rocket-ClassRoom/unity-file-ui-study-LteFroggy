@@ -1,8 +1,6 @@
-using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;	
 
 public class CharacterDetail : MonoBehaviour {
 	[SerializeField] private Image _characterImage;
@@ -17,8 +15,8 @@ public class CharacterDetail : MonoBehaviour {
 	private LocalizationText _jobLocalizationText;
 	
 	public void Init() {
-		_weaponButton.Init();
-		_armorButton.Init();
+		_weaponButton.Init(InventoryFilteringOption.Weapon);
+		_armorButton.Init(InventoryFilteringOption.Equip);
 		_jobLocalizationText = _characterJob.GetComponentInChildren<LocalizationText>();
 	}
 

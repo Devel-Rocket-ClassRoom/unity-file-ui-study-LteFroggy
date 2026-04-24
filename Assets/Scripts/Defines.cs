@@ -18,7 +18,7 @@ public enum InventoryFilteringOption {
     Weapon,
     Equip,
     Consumable,
-    NotConsumable,
+    NotConsumable
 }
 
 public enum InventorySortingOption {

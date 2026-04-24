@@ -14,8 +14,8 @@ public class UiInventorySlotList : MonoBehaviour {
 	private readonly List<UiInventorySlot> _itemSlots = new List<UiInventorySlot>();
 	private List<SaveItemData> _tempItemList;
 	
-	public UnityEvent<SaveItemData> onSelectedSlot;
-	public UnityEvent onRemoveSlot;
+	[HideInInspector] public UnityEvent<SaveItemData> onSelectedSlot;
+	[HideInInspector] public UnityEvent onRemoveSlot;
 	
 	private InventoryFilteringOption _filterOption;
 	private InventorySortingOption _sortingOption;
